@@ -1,7 +1,6 @@
 import Peer from "peerjs";
 
 export const peer = new Peer();
-let conn;
 
 export function estConn(conn) {
   conn.on("open", function () {
