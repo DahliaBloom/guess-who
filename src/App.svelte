@@ -1,22 +1,12 @@
 <script>
-  import Peer from "peerjs";
-
-  const peer = new Peer();
-
-  let id = "";
-
-  peer.on("open", function (ids) {
-    console.log("My peer ID is: " + ids);
-    id = ids;
-  });
-
-  peer.on("connection", function (conn) {
-    console.log(conn);
-  });
-
-  let peerId = "";
+  import Background from "./lib/Background.svelte";
+  import Heading from "./lib/Heading.svelte";
+  import RoomButtons from "./lib/RoomButtons.svelte";
 </script>
 
-{id}
-<input type="text" bind:value={peerId} />
-<button on:click={() => peer.connect(peerId)}>Connect</button>
+<Background />
+
+<div class="flex justify-center items-center flex-col h-screen">
+  <Heading />
+  <RoomButtons />
+</div>
