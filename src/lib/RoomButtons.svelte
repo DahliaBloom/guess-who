@@ -1,7 +1,6 @@
 <script>
   import { estConn, peer } from "./connection.js";
   import { createEventDispatcher } from "svelte";
-  import { onMount } from "svelte";
 
   const dispatch = createEventDispatcher();
 
@@ -9,11 +8,9 @@
 
   let peerID = "";
 
-  onMount(() => {
-    peer.on("connection", (conn) => {
-      estConn(conn);
-      dispatch("close");
-    });
+  peer.on("connection", (conn) => {
+    estConn(conn);
+    dispatch("close");
   });
 </script>
 

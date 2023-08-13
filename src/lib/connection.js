@@ -3,7 +3,7 @@ import Peer from "peerjs";
 export const peer = new Peer();
 let conn;
 
-export function estConn(c) {
+export function estConn(conn) {
   conn.on("open", function () {
     // Receive messages
     conn.on("data", function (data) {
